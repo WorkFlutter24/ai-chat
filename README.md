@@ -10,13 +10,13 @@ With a focus on enhancing user interaction and accessibility, AI-Chat App is pac
 - **Set up your API key** [scroll](#getting-started)
 - **Initialize Gemini** [scroll](#initialize-gemini)
 - **Content-based APIs** [scroll](#content-based-apis)
-    - **Text-only input** [scroll](#text-only-input)
-    - **Text-and-image input** [scroll](#text-and-image-input)
+  - **Text-only input** [scroll](#text-only-input)
+  - **Text-and-image input** [scroll](#text-and-image-input)
 - **Advanced Usage** [scroll](#advanced-usage)
-    - **Text-to-speech** [scroll](#text-to-speech)
-    - **Speech-to-text with video** [scroll](#speech-to-text)
-    - **Dark-light theme** [scroll](#dark-light-theme)
-    - **Custom gallery** [scroll](#custom-gallery)
+  - **Text-to-speech** [scroll](#text-to-speech)
+  - **Speech-to-text with video** [scroll](#speech-to-text)
+  - **Dark-light theme** [scroll](#dark-light-theme)
+  - **Custom gallery** [scroll](#custom-gallery)
 - **Gemini Widget** [scroll](#gemini-widget)
 
 ## Getting Started
@@ -40,9 +40,12 @@ void main() {
 
 ## Content-based APIs
 
-https://github.com/user-attachments/assets/257ad6b2-bfad-4562-b1c4-89809d38063c
+
+https://github.com/user-attachments/assets/f8aefb5e-5ab0-4dae-b9af-14838e77f75f
+
 
 #### Text-only input
+
 
 Using Gemini's streamGenerateContent method for text-only input allows you to receive partial results in real-time, enhancing interaction speed and user experience.
 This ensures that users get immediate feedback from their AI queries without waiting for the entire response.
@@ -117,7 +120,7 @@ import 'package:speech_to_text/speech_to_text.dart' as stt;
           print('onStatus: $val');
         },
         onError: (val) {
-          print('onError: $val');=
+          print('onError: $val');
         },
       );
         speech!.listen(
