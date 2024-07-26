@@ -3,7 +3,7 @@
 Welcome to  AI-Chat App, a cutting-edge application designed to bring advanced AI capabilities to both iOS and Android platforms.
 With a focus on enhancing user interaction and accessibility, AI-Chat App is packed with powerful features.
 
-![gemini_github_cover](https://github.com/user-attachments/assets/8ebebfbf-17e3-4862-ba00-68c09a0c08a7)
+![ai_banner1](https://github.com/user-attachments/assets/a34e5e63-0550-4a8a-92c3-258dc2b59ffe)
 
 ## Features
 
@@ -14,7 +14,7 @@ With a focus on enhancing user interaction and accessibility, AI-Chat App is pac
   - **Text-and-image input** [scroll](#text-and-image-input)
 - **Advanced Usage** [scroll](#advanced-usage)
   - **Text-to-speech** [scroll](#text-to-speech)
-  - **Speech-to-text with video** [scroll](#speech-to-text)
+  - **Speech-to-text** [scroll](#speech-to-text)
   - **Dark-light theme** [scroll](#dark-light-theme)
   - **Custom gallery** [scroll](#custom-gallery)
 - **Gemini Widget** [scroll](#gemini-widget)
@@ -41,7 +41,7 @@ void main() {
 ## Content-based APIs
 
 
-https://github.com/user-attachments/assets/f8aefb5e-5ab0-4dae-b9af-14838e77f75f
+https://github.com/user-attachments/assets/e15dbd1a-86e5-4ae3-9eaf-62f9cc0a16de
 
 
 #### Text-only input
@@ -102,7 +102,7 @@ Future stop() async {
   }
 ```
 
-#### Speech-to-text with video
+#### Speech-to-text
 
 Using the speech_to_text package, the provided code demonstrates how to start and stop speech recognition in a Flutter app.
 The listen function initializes the speech recognizer, starts listening for speech input, and prints the recognized words or any errors to the console.
@@ -191,10 +191,9 @@ When the loading state is true, it returns a loading widget, and when the respon
          }}),
 ```
 
-![download-compresskaru com (1)](https://github.com/user-attachments/assets/9fc7913b-b8a7-4ab4-bb0f-80b8ac36c7bc)  ![download-compresskaru com (2)](https://github.com/user-attachments/assets/7504d794-fcf4-444d-b0b4-f16b9c0d54b4) ![download-compresskaru com](https://github.com/user-attachments/assets/bd689b0b-07ca-4462-bb8b-3a997c577914)
+![download-compresskaru com 6 39 34 PM](https://github.com/user-attachments/assets/f6996371-ddc2-4d71-9fea-5c386e1dcbe0) ![download-compresskaru com 6 07 50 PM](https://github.com/user-attachments/assets/26958719-08af-4578-9ff8-f56d4820a74b) ![download-compresskaru com 6 07 38 PM](https://github.com/user-attachments/assets/ece71fcc-e99c-44a5-a623-5e6859991acc)
 
-![download-compresskaru com (1)](https://github.com/user-attachments/assets/4551ecf7-ab7a-4b0b-abf9-f3383a83c456) ![download-compresskaru com](https://github.com/user-attachments/assets/63670481-a421-4d4a-bef0-3605176bdfd3)  ![download-compresskaru com](https://github.com/user-attachments/assets/4c0728f4-c59c-4c37-9cf8-16665722dcfb)
-
+![download-compresskaru com (2)](https://github.com/user-attachments/assets/2e6e10e1-aa8f-4282-9ebd-84654eed97a9) ![download-compresskaru com 6 02 33 PM](https://github.com/user-attachments/assets/24fd2aed-327f-49d0-9db0-cf897b17f5cc) ![download-compresskaru com](https://github.com/user-attachments/assets/2e2e8297-0b0c-4dc5-b0d5-e869b0825f47)
 
 
 
