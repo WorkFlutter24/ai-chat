@@ -5,15 +5,16 @@ import 'package:aichat/ui/main_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'ui/shared/theme_controller.dart';
-
-void main() {
+SharedPreferences ?prefs;
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+   prefs = await SharedPreferences.getInstance();
   Gemini.init(
       apiKey: const String.fromEnvironment('apiKey'), enableDebugging: true);
-
-  Gemini.reInitialize(apiKey: "Put your api key here", enableDebugging: false);
-
+  Gemini.reInitialize(apiKey: "AIzaSyDp5bif8OWhlFpNEhUVqdZsofhd2hA8KCo", enableDebugging: false);
   runApp(const MyApp());
 }
 
@@ -22,7 +23,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final ThemeController themeController = Get.put(ThemeController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,

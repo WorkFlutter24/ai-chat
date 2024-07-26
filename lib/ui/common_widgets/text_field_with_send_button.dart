@@ -85,8 +85,7 @@ class TextFieldWithSendButton extends StatelessWidget {
                         );
                       },
                       child: SvgPicture.asset(
-                          controller.themeController.isDarkMode.value || MediaQuery.of(context).platformBrightness ==
-                              Brightness.dark
+                          controller.themeController.isDarkMode.value
                               ? ImageConstant.galleryDark
                               :ImageConstant.gallery)),
                   const SizedBox(width: 16),

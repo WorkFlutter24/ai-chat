@@ -26,8 +26,7 @@ class OpenGalleryView extends GetView<OpenGalleryController> {
               width: double.infinity,
               height: double.infinity,
               decoration: BoxDecoration(image: DecorationImage(image: AssetImage(
-                  controller.themeController.isDarkMode.value || MediaQuery.of(context).platformBrightness ==
-                      Brightness.dark
+                  controller.themeController.isDarkMode.value
                       ? ImageConstant.bgDark
                       : ImageConstant.bgLight), fit: BoxFit.fill)),
               child: SafeArea(

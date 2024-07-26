@@ -11,50 +11,44 @@ class SendButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<MainController>(
-      builder: (controller) {
-        return CommonInkwell(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-              if (controller.messageController.text.isNotEmpty) {
-                controller.noData = true;
-                controller.isListening = false;
-                controller.playing = false;
-                controller.allText.clear();
-                controller.searchedText = controller.messageController.text;
-                controller.selectedPhoto2 = controller.selectedPhoto;
+    return GetBuilder<MainController>(builder: (controller) {
+      return CommonInkwell(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            if (controller.messageController.text.isNotEmpty) {
+              controller.noData = true;
+              controller.isListening = false;
+              controller.playing = false;
+              controller.allText.clear();
+              controller.searchedText = controller.messageController.text;
+              controller.selectedPhoto2 = controller.selectedPhoto;
+              controller.selectedPhoto = null;
+              controller.update();
+              controller.messageController.clear();
+              controller.gemini
+                  .streamGenerateContent(controller.searchedText!, images: controller.imageList, modelName: 'models/gemini-1.5-flash-latest')
+                  .handleError((e) {
+                if (e is GeminiException) {
+                  print(e);
+                }
+              }).listen((value) {
+                controller.imageList = null;
                 controller.selectedPhoto = null;
                 controller.update();
-                controller.messageController.clear();
-                controller.gemini
-                    .streamGenerateContent(controller.searchedText!,
-                    images: controller.imageList, modelName: 'models/gemini-1.5-flash-latest')
-                    .handleError((e) {
-                  if (e is GeminiException) {
-                    print(e);
-                  }
-                }).listen((value) {
-                  controller.imageList = null;
-                  controller.selectedPhoto = null;
+                if (value.finishReason != 'STOP') {
+                  controller.finishReason = 'Finish reason is `${value.finishReason}`';
+                } else {
+                  value.content?.parts?.forEach(
+                    (element) {
+                      controller.allText.add(element.text ?? "");
+                    },
+                  );
                   controller.update();
-                  if (value.finishReason != 'STOP') {
-                    controller.finishReason = 'Finish reason is `${value.finishReason}`';
-                  } else {
-                    value.content?.parts?.forEach(
-                          (element) {
-                        controller.allText.add(element.text ?? "");
-                      },
-                    );
-                    controller.update();
-                  }
-                });
-              }
-            },
-            child: SvgPicture.asset( controller.themeController.isDarkMode.value || MediaQuery.of(context).platformBrightness ==
-                Brightness.dark
-                ? ImageConstant.send
-                :ImageConstant.sendDark));
-      }
-    );
+                }
+              });
+            }
+          },
+          child: SvgPicture.asset(controller.themeController.isDarkMode.value ? ImageConstant.send : ImageConstant.sendDark));
+    });
   }
 }

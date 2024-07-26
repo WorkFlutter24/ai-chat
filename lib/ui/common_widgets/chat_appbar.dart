@@ -26,7 +26,8 @@ class ChatAppbar extends StatelessWidget {
                   children: [
                     HeadlineBodyOneBaseWidget(
                       title: "AI Chat",
-                      titleColor: ThemeColors.primary(context),
+                      titleColor:   controller.themeController.isDarkMode.value  ? ColorConstants.white : ColorConstants.black
+                  ,
                       fontSize: 32,
                       fontWeight: FontWeight.w700,
                     ),
@@ -47,7 +48,8 @@ class ChatAppbar extends StatelessWidget {
                             controller.update();
                             controller.speak(controller.data);
                           },
-                          child: const Icon(Icons.video_chat)),
+                          child:  Icon(Icons.video_chat, color: controller.themeController.isDarkMode.value ? ColorConstants.white : ColorConstants.black,
+                          )),
                     if (controller.isSpeaking)
                       const SizedBox(width: 10),
                      if (controller.isSpeaking)
@@ -57,7 +59,7 @@ class ChatAppbar extends StatelessWidget {
                             controller.update();
                             controller.stop();
                           },
-                          child: const Icon(Icons.stop_circle)),
+                          child:  Icon(Icons.stop_circle, color: controller.themeController.isDarkMode.value  ? ColorConstants.white : ColorConstants.black)),
                     const SizedBox(width: 10),
                     CommonInkwell(
                         onTap: () {
@@ -66,7 +68,7 @@ class ChatAppbar extends StatelessWidget {
                           controller.update();
                         },
                         child: Image.asset(ImageConstant.moon,
-                            color: controller.themeController.isDarkMode.value ||MediaQuery.of(context).platformBrightness == Brightness.dark ? ColorConstants.white : ColorConstants.black,
+                            color: controller.themeController.isDarkMode.value?  ColorConstants.white : ColorConstants.black,
                             height: 24,
                             width: 24)),
                   ],
@@ -74,7 +76,8 @@ class ChatAppbar extends StatelessWidget {
               ),
               const SizedBox(height: 5),
               Container(
-                color: ThemeColors.primary(context),
+                color:   controller.themeController.isDarkMode.value  ?  ColorConstants.white : ColorConstants.black,
+
                 height: 1,
                 width: double.infinity,
               ),

@@ -75,8 +75,7 @@ class ChatList extends StatelessWidget {
                                           margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height / 4.2),
                                           child: Column(
                                             children: [
-                                          Lottie.asset(ImageConstant.aiRobotFinding,height: 150, width: 150,fit: BoxFit.fill),
-
+                                              Lottie.asset(ImageConstant.aiRobotFinding, height: 150, width: 150, fit: BoxFit.fill),
                                               const HeadlineBodyOneBaseWidget(title: "Search something ..."),
                                             ],
                                           )));
